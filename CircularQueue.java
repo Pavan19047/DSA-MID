@@ -6,6 +6,7 @@ public class CircularQueue {
 
     CircularQueue(int size) {
         front = rear = -1;
+        capacity = size;
         queue = new int[capacity];
     }
 
@@ -19,7 +20,6 @@ public class CircularQueue {
             }
             rear = (rear + 1) % capacity;
             queue[rear] = item;
-            capacity++;
             System.out.println(item + " successfully inserted in the queue");
         }
     }
@@ -29,15 +29,13 @@ public class CircularQueue {
             System.out.println("Queue Empty");
             return;
         } else if (front == rear) {
-            System.out.println("underflow");
+            System.out.println(queue[front] + " dequeued successfully");
             front = -1;
             rear = -1;
         } else {
+            System.out.println(queue[front] + " dequeued successfully");
             front = (front + 1) % capacity;
-            System.out.println(+queue[front] + " dequeued successfully");
         }
-
-        return;
     }
 
     static void display() {
@@ -50,21 +48,19 @@ public class CircularQueue {
             }
             System.out.println();
         }
-        return;
     }
 
     static void QueueFront() {
         if (front == -1) {
             System.out.println("\nQueue is empty\n");
-            return;
         } else {
-            System.out.println("Front element of the queue is:- " + queue[front]);
+            System.out.println("Front element of the queue is: " + queue[front]);
         }
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the size of the queue:- ");
+        System.out.println("Enter the size of the queue: ");
         int n = sc.nextInt();
         new CircularQueue(n);
         for (;;) {
@@ -72,7 +68,7 @@ public class CircularQueue {
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println("Enter the element to be inserted:- ");
+                    System.out.println("Enter the element to be inserted: ");
                     int ele = sc.nextInt();
                     enqueue(ele);
                     break;
