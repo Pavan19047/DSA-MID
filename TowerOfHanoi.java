@@ -18,5 +18,6 @@ public class TowerOfHanoi {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
         t.towerOfHanoiMethod(n, "source", "helper", "destination");
+        sc.close();
     }
 }
