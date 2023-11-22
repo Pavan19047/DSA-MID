@@ -43,8 +43,11 @@ public class CircularQueue {
             System.out.println("\nQueue is empty\n");
             return;
         } else {
-            for (int i = front; i != (rear + 1) % capacity; i = (i + 1) % capacity) {
+            for (int i = front; ; i = (i + 1) % capacity) {
                 System.out.print(queue[i] + " ");
+                if (i == rear) {
+                    break;
+                }
             }
             System.out.println();
         }
