@@ -1,4 +1,26 @@
-class SelectionSort {
+import java.util.Scanner;
+
+public class SelectionSort {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        SelectionSort ss = new SelectionSort();
+        ss.selectionSort(arr);
+
+        System.out.println("Sorted array:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        sc.close();
+    }
 
     public void selectionSort(int[] arr) {
         int n = arr.length;
@@ -13,14 +35,6 @@ class SelectionSort {
             arr[minIndex] = arr[i];
             arr[i] = temp;
         }
-    }
 
-    public static void main(String[] args) {
-        int[] arr = { 5, 4, 3, 2, 1 };
-        SelectionSort ss = new SelectionSort();
-        ss.selectionSort(arr);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
     }
 }
