@@ -95,4 +95,5 @@ class Stack{
             System.out.println();
         }
     }
+    
 }

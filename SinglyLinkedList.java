@@ -23,7 +23,7 @@ public class SinglyLinkedList{
         }else{
             newNode.next=head;
             head=newNode;
-            System.out.println(+data+" inserted successfully");
+            System.out.println(data+" inserted successfully");
         }
     }
     public void insert_end(int data){
@@ -46,12 +46,12 @@ public class SinglyLinkedList{
             newNode.next=head;
             head=newNode;
         }
-        Node prev = head;
+        Node temp = head;
         for(int i=1;i<pos-1;i++){
-            prev=prev.next;
+           temp=temp.next;
         }
-        newNode.next=prev.next;
-        prev.next=newNode;
+        newNode.next=temp.next;
+        temp.next=newNode;
         System.out.println(data+" inserted at position "+pos);
     }
     public void delete_begin(){
